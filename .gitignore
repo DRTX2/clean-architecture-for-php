@@ -1,0 +1,29 @@
+# Composer
+/vendor/
+composer.lock
+
+# Entornos
+.env
+.env.*.local
+
+# IDEs
+.idea/
+.vscode/
+
+# Sistemas Operativos
+.DS_Store
+Thumbs.db
+
+# Logs y cachés
+/storage/*.log
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+
+# PHPUnit
+phpunit.result.cache
+
+# Otros
+node_modules/
+
