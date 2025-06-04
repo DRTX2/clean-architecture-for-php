@@ -1,32 +1,28 @@
 <?php
+
 use DI\Container;
 use Slim\Factory\AppFactory;
 use Dotenv\Dotenv;
 
-// Autoload de Composer
-require __DIR__ . '/vendor/autoload.php';
+// Autoload de Composer (solo si no lo hizo index.php)
+require_once __DIR__ . '/vendor/autoload.php';
 
-// Cargar variables de entorno desde .env
+// Cargar variables de entorno
 $dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+$dotenv->safeLoad();
 
-// Crear el contenedor de dependencias (PHP-DI)
+// Crear contenedor y registrar en Slim
 $container = new Container();
-
-// Registrar el contenedor en Slim
 AppFactory::setContainer($container);
-
-// Crear la app Slim
 $app = AppFactory::create();
 
-// Registrar Middleware aquí si querés (JWT, CORS, etc.)
+// Middlewares
 $app->addRoutingMiddleware();
 $app->addErrorMiddleware(true, true, true);
 
-// EntityManager (Doctrine)
+// Doctrine
 $entityManager = require __DIR__ . '/config/doctrine.php';
 $container->set('EntityManager', $entityManager);
 
-// Devolvés la app para usarla en index.php
+// Devolver la app
 return $app;
-

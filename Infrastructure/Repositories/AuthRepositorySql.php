@@ -1,0 +1,1 @@
+Tengo dudas de como quedo, dto no va en dominio, no seria en application, la capa de presentacion no deberia llamarse application y contener usecases/servicios(de ser necesarios), mientras que en infrastructure tener mas excepciones, seguridad, coneccion o mejor dicho implementaciones para usar un dao/repository, la parte de presentacion no estoy muy seguro pero se ve genial.

@@ -27,3 +27,4 @@ phpunit.result.cache
 # Otros
 node_modules/
 
+/notes.md
