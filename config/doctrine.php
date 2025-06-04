@@ -8,6 +8,7 @@ $isDevMode = $_ENV['APP_ENV'] !== 'production';
 
 $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, null, null, false);
 
+
 // Parámetros de conexión
 $dbParams = [
     'driver'   => $_ENV['DB_DRIVER'],      // 'pdo_mysql', 'pdo_pgsql', 'pdo_sqlite', etc.

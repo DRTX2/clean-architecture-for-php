@@ -16,6 +16,7 @@ use Presentation\Controllers\AuthController;
 
 return function (Container $container) {
     // EntityManager (creado en bootstrap y registrado como 'EntityManager')
+
     $container->set(EntityManagerInterface::class, fn() => $container->get('EntityManager'));
 
     // JWTService (no se puede autowirear por usar string del .env)
